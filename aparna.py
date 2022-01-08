@@ -1,59 +1,29 @@
 import random
+print('Welcome to Rock,Paper,Scissors')
+print('Lets get into the instructions')
+print('Rules are as follows:')
+print('1.Rock Vs Paper, Rock wins')
+print('2.Paper Vs Scissor, Scissor wins')
+print('3.Rock Vs Scissor ,Rock wins') 
+user_action = input("Enter a choice (rock, paper, scissors): ")
+possible_actions = ["rock", "paper", "scissors"]
+computer_action = random.choice(possible_actions)
+print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
 
-print("WELCOME TO ROCK ,PAPER,SCISSORS")
-print('Lets get to the rules of the game so that you can play the game without no confusion.')
-print("Winning rules are as follows")
-print('1. ROCK  Vs PAPER   the winner is ROCK.')
-print('2. ROCK  Vs SCISSOR the winner is ROCK.')
-print('3. PAPER Vs SCISSOR the winner is SCISSOR.')
-
-while True:
-    print(' enter your choice 
-        1. ROCK
-        2. PAPER
-        3. SCISSOR')
-    choice= int(input(' User turn : enter your choice'))
-    if choice > 3 or choice < 1 :
-        print('invalid input please enter your choice as 1,2 or 3.')
-    if choice ==1:
-        user choice= 'ROCK'
-    elif choice == 2:
-        user choice= 'PAPER'
+if user_action == computer_action:
+    print(f"Both players selected {user_action}. It's a tie!")
+elif user_action == "rock":
+    if computer_action == "scissors":
+        print("Rock smashes scissors! You win!")
     else:
-        user choice= 'SCISSOR'
-     print(" Now its computer's turn ")
-     computer choice = random.randint(1,3)
-
-    while computer choice == choice:
-        computer choice = random.randint(1,3)
-    if computer choice= 1:
-        comp choice name= 'ROCK'
-    elif computer choice = 2:
-        comp choice name = 'PAPER'
-    elif computer choice =3:
-        comp choice name = 'SCISSOR'
-
-    print('Computers choice is,' computer choice)
-    print(user choice'Vs' computer choice name)
-
-    if user choice= computer choice:
-         print('Both players selected same object its a TIE!')
-    if user choice='1'  and computer choice ='3' :
-        print('RESULT : ROCK WINS !!! CONGRATS USER YOU HAVE WON')
-    elif user choice ='2' and computer choice  ='3':
-        print('RESULT: SCISSOR WINS!! SORRY USER COMPUTER HAVE DEFEATED YOU BETTER LUCK NEXT TIME ')
-    elif user choice ='1' and computer choice  ='2':
-        print('RESULT : PAPER WINS !!!  SORRY USER  COMPUTER HAVE DEAFETD YOUBETTER LUCK NEXT TIME')
-    elif user choice ='2' and computer choice ='1':
-        print('RESULT : PAPER WINS!!! CONGARTS USER YOU HAVE WON ') 
-    elif user choice ='3' and computer choice ='1':
-        print('ROCK WINS!!! SORRY USER COMPUTER HAVE DEFEATED YOU BETTER LUCK NEXT TIME')
-    elif user choice= '3' and computer choice ='2':
-        print('RESULT: SCISSOR WINS!!! CONGRATS USER YOU HAVE WON')
-
-    print('Do you want to play again ? Y/N')
-    ans=input()
-    if ans== 'N'or ans=='n':
-        break
-print('Thanks for playing the game')
-print('Game created by Aparna')
+        print("Paper covers rock! You lose.")
+elif user_action == "paper":
+    if computer_action == "rock":
+        print("Paper covers rock! You win!")
+    else:
+        print("Scissors cuts paper! You lose.")
+elif user_action == "scissors":
+    if computer_action == "paper":
+        print("Scissors cuts paper! You win!")
+    else:
+        print("Rock smashes scissors! You lose.")
